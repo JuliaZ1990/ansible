@@ -1,0 +1,14 @@
+---
+- name: Установка пакетов на устройство
+  hosts: julia
+  become: true
+
+  tasks:
+    - name: Установить пакеты cmatrix, cowsay и sl
+      apt:
+        name:
+          - cmatrix
+          - cowsay
+          - sl
+        state: present
+      become: true
